@@ -1,0 +1,29 @@
+<!--Formulario reactivo-->
+<form [formGroup]="miFormulario">
+    
+
+    <h2>Datos del formulario</h2>
+    <p>{{miFormulario.value | json}}</p>
+
+    <!--Campos del formulario-->
+    <mat-form-field>
+        <input matInput placeholder="Nombre" formControlName="nombre">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Apellido" formControlName="apellido">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Teléfono" formControlName="telefono">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Dirección" formControlName="direccion">
+    </mat-form-field>
+
+</form>
