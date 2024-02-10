@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,13 @@ import { FormularioArrayComponent } from './components/forms/formulario-array/fo
 import { FormularioValidadoComponent } from './components/forms/formulario-validado/formulario-validado.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { EjemploPipesComponent } from './components/ejemplo-pipes/ejemplo-pipes/ejemplo-pipes.component';
+import { MultiplicaPipe } from './pipes/multiplica.pipe';
+import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
+
+import localeES from "@angular/common/locales/es";
+import { registerLocaleData } from "@angular/common";
+registerLocaleData(localeES, "es");
 
 @NgModule({
   declarations: [
@@ -39,7 +46,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     FormularioComponent,
     FormularioAnidadoComponent,
     FormularioArrayComponent,
-    FormularioValidadoComponent
+    FormularioValidadoComponent,
+    EjemploPipesComponent,
+    MultiplicaPipe,
+    CalcularPuntuacionPipe
   ],
   imports: [
     BrowserModule,
@@ -50,7 +60,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     FormsModule,
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'es'},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

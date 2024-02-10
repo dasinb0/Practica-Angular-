@@ -1,0 +1,38 @@
+<h1>Ejemplos pipes nativos</h1>
+
+<!-- fechas -->
+<h2>Pipes para fechas</h2>
+<p>Mi cumpleaños es: {{dob}} </p>
+<p>Mi cumpleaños con PIPES DATE BASICO es: {{dob | date}} </p>
+<p>Mi cumpleaños con PIPES DATE FORMATEADO es: {{dob | date: "dd/MM/yyyy"}} </p>
+
+<p>Mi cumpleaños con PIPES DATE short es: {{dob | date: 'shortDate'}} </p>
+<p>Mi cumpleaños con PIPES DATE full es: {{dob | date: 'fullDate'}} </p>
+
+<p>Mi cumpleaños con PIPES DATE short/full es: {{dob | date: dateFormat}} </p>
+<button (click)="cambiarFormato()">Cambiar formato a {{!cambio  ? 'short' : 'full'}}</button>
+
+<p>Bienvenido, {{nombre | uppercase}}</p>
+<p>Nombre de Usuario: @{{nombre | lowercase}}</p>
+
+<p>Mi cumpleaños con PIPES DATE short/full MAYUS es: {{dob | date: dateFormat | uppercase}} </p>
+<p>Mi cumpleaños con PIPES DATE short/full MINUSCULA es: {{dob | date: dateFormat | lowercase}} </p>
+
+<p>Resultado: {{2 | multiplica: 10}} puntos</p>
+
+<p>{{jugador1 | calcularPuntuacion}}</p>
+<p>{{jugador2 | calcularPuntuacion}}</p>
+
+<p>PI (3 decimales): {{numero_PI | number: '.3-3'}}</p>
+<p>PI (5 decimales): {{numero_PI | number: '.5-5'}}</p>
+<p>PI (2 enteros y 8 decimales): {{numero_PI | number: '2.8-8'}}</p>
+
+<p>Precio del carrito € : {{precioCarrito | currency: 'EUR':true:'.3-3'}}</p>
+<p>Precio del carrito $ : {{precioCarrito | currency: 'USD'}}</p>
+<p>Precio del carrito £ : {{precioCarrito | currency: 'GBP'}}</p>
+
+<p>{{persona | json}}</p>
+
+<p>Porcentaje obtenido: {{cantidad | percent:'2.2-2'}}</p>
+
+<p>Texto demasiado largo: {{textoLargo | slice:0:10}}...</p>
