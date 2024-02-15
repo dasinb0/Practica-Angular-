@@ -13,7 +13,7 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
     this.authService.login("eve.holt@reqres.in", "cityslicka").subscribe(
       (response) => {
-        console.log('Respuesta Login', response);
+        // console.log('Respuesta Login', response);
         sessionStorage.setItem('token', response.token);
       },
       (error) => {

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -11,8 +10,9 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginFormComponent implements OnInit {
 
   loginForm: FormGroup = new FormGroup({});
+  @Output() loginAction: EventEmitter<{}> = new EventEmitter<{}>();
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -33,9 +33,9 @@ export class LoginFormComponent implements OnInit {
   //Submit del form de login
   submitLogin(){
     if(this.loginForm.valid) {
-      console.table(this.loginForm.value);
-      //TODO peticion a authService
-      this.loginForm.reset();
+      // console.table(this.loginForm.value);
+      this.loginAction.emit(this.loginForm.value)
+      // this.loginForm.reset();
     }
   }
 
