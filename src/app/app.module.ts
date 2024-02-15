@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskComponent } from './components/task/task/task.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
-import { LoginFormComponent } from './components/auth/login-form/login-form.component';
+import { LoginFormComponent } from './components//login-form/login-form.component';
 import { RegisterFormComponent } from './components/auth/register-form/register-form.component';
 import { NavBarComponent } from './components/nav/nav-bar/nav-bar.component';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
@@ -27,6 +27,7 @@ import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
 
 import localeES from "@angular/common/locales/es";
 import { registerLocaleData } from "@angular/common";
+import { MaterialModule } from './modules/material/material.module';
 registerLocaleData(localeES, "es");
 
 @NgModule({
@@ -58,7 +59,9 @@ registerLocaleData(localeES, "es");
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MaterialModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'es'},
